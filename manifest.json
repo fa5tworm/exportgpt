@@ -1,0 +1,31 @@
+{
+
+  "manifest_version": 2,
+  "name": "ExportGPT",
+  "version": "1.1",
+
+  "description": "Allows the user the export their current ChatGPT conversation to a json file.",
+  "icons": {
+    "48": "icons/exportgpt-48.png"
+  },
+
+  "permissions": [
+    "storage"
+  ],
+
+  "browser_action": {
+    "default_icon": {
+     "32" : "icons/exportgpt-32.png"
+    },
+    "default_title": "ExportGPT",
+    "default_popup": "popup/exportgpt.html"
+  },
+
+  "content_scripts": [
+      {
+          "matches": ["https://*.openai.com/*"],
+          "js": ["script.js"]
+      }
+  ]
+
+}
